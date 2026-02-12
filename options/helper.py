@@ -1,8 +1,6 @@
 import yfinance as yf
 import pandas as pd
 import numpy as np
-import datetime
-from dateutil.relativedelta import relativedelta
 
 
 def read_ticker(ticker: str, past: str = '2y', exp_days: int = 365) -> pd.DataFrame:
@@ -30,9 +28,9 @@ def read_ticker(ticker: str, past: str = '2y', exp_days: int = 365) -> pd.DataFr
   volatility = volatility * np.sqrt(TRADING_DAYS)  # annualized
   val = {'sigma': volatility.iloc[-1], 'spot': df_close['Close'].iloc[-1], 'r': 0.02, 'div': 0.0}
 
-  current_date = datetime.datetime.today()
+  current_date = pd.Timestamp.now()
   # Filter so only options up to current_day + exp_days are used
-  future_date = current_date + relativedelta(days=exp_days)
+  future_date = current_date + pd.Timedelta(days=exp_days)
   option_dates = pd.to_datetime(dat.options)
   option_dates = option_dates[option_dates < future_date]
   option_dates = option_dates[option_dates > current_date]
