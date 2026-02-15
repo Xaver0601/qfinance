@@ -10,7 +10,7 @@ def read_ticker(ticker: str, past: str = '2y', exp_days: int = 365) -> pd.DataFr
   Returns:
     Dataframes for [calls, puts, closing price], 'val'.
   Parameters:
-    ticker: 4-character ticker symbol.
+    ticker: Ticker symbol.
     past: Data range for volatility analysis.
     exp_days: Data range for option chain [days].
   '''

@@ -19,12 +19,24 @@
 
 ---
 
+## Portfolio Optimization and Asset Allocation
+- Evaluate risk/return profiles of stocks using metrics like alpha, beta, and Sharpe ratio.
+- Analyze co-movement of stocks using correlation.
+- Find optimal asset allocation to maximize sharpe ratio.
+
+- **Notebooks**:
+  - [compare.ipynb](portfolio/compare.ipynb): Compare risk/return profiles of stock vs benchmark (e.g. S&P 500) using alpha, beta, and Sharpe ratio.
+  - [portfolio_construction.ipynb](portfolio/portfolio_construction.ipynb): Construct an optimal portfolio maximizing Sharpe ratio.
+
+- TODO:
+  - Find optimal asset allocations for e.g. maximum alpha, minimum volatility, etc.
+  - Find uncorrelated stocks (maybe even negative correlation) to diversify risk.
+  - Create own ETFs with different risk/return profiles and constraints (e.g. max 10% in any stock).
+
 ## Future topics to cover:
 - Backtesting of strategies.
 - Portfolio Optimization and Asset Allocation:
   - Markowitz model, Modern Portfolio Theory, etc.
-  - Analyze risk/return profiles of stocks (alpha, beta, sharpe ratio, etc.).
-  - Find correlated stocks and analyze their co-movement (correlation, cointegration, etc.).
 - Quantitative Trading:
   - Predict market movements using statistics.
 - Risk management:
